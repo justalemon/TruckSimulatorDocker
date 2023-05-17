@@ -15,5 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     ln -s /usr/games/steamcmd /usr/bin/steamcmd && \
     chmod +x /entrypoint && \
     mkdir /server && \
-    steamcmd +force_install_dir /server +login anonymous +app_update 1948160 +exit
+    steamcmd +force_install_dir /server +login anonymous +app_update 1948160 +exit && \
+    rm /server/steamclient.so && \
+    mv /server/linux64/steamclient.so /server
 CMD ["bash", "-c", "/entrypoint"]
