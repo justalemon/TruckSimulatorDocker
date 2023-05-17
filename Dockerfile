@@ -1,4 +1,5 @@
 FROM ubuntu:mantic
+COPY entrypoint.sh /entrypoint
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update && \
     apt-get upgrade -y && \
@@ -12,4 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get autoremove --purge software-properties-common -y && \
     apt-get clean && \
     ln -s /usr/games/steamcmd /usr/bin/steamcmd && \
-    steamcmd +quit
+    steamcmd +quit && \
+    chmod +x /entrypoint
+ENTRYPOINT [ "/entrypoint" ]
+CMD ["bash", "-c", "${EXECUTABLE}"]
