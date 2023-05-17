@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get autoremove --purge software-properties-common -y && \
     apt-get clean && \
     ln -s /usr/games/steamcmd /usr/bin/steamcmd && \
-    steamcmd +quit && \
-    chmod +x /entrypoint
+    chmod +x /entrypoint && \
+    mkdir /server && \
+    steamcmd +force_install_dir /server +login anonymous +app_update 1948160 +exit
 CMD ["bash", "-c", "/entrypoint"]
