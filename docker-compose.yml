@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  ets2convoys:
+    build: .
+    volumes:
+      - ./gamedata:/gamedata:rw
