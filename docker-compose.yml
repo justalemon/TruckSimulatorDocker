@@ -6,6 +6,7 @@ services:
     volumes:
       - ./gamedata:/gamedata:rw
     network_mode: host
+    restart: unless-stopped
     ports:
       - "27015:27015"
       - "27016:27016"
