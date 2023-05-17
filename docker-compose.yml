@@ -5,3 +5,9 @@ services:
     build: .
     volumes:
       - ./gamedata:/gamedata:rw
+    network_mode: host
+    ports:
+      - "27015:27015"
+      - "27016:27016"
+      - "27015:27015/udp"
+      - "27016:27016/udp"
