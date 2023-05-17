@@ -11,4 +11,5 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install steamcmd -y --no-install-recommends && \
     apt-get autoremove --purge software-properties-common -y && \
     apt-get clean && \
-    ln -s /usr/games/steamcmd /usr/bin/steamcmd
+    ln -s /usr/games/steamcmd /usr/bin/steamcmd && \
+    steamcmd +quit
