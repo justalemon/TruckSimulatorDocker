@@ -7,3 +7,4 @@ if [ ! -d "$XDG_DATA_HOME" ]; then
 fi
 
 echo "Starting server at $(date)"
+/server/bin/linux_x64/eurotrucks2_server
