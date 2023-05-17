@@ -15,5 +15,4 @@ RUN DEBIAN_FRONTEND=noninteractive \
     ln -s /usr/games/steamcmd /usr/bin/steamcmd && \
     steamcmd +quit && \
     chmod +x /entrypoint
-ENTRYPOINT [ "/entrypoint" ]
-CMD ["bash", "-c", "${EXECUTABLE}"]
+CMD ["bash", "-c", "/entrypoint"]
